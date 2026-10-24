@@ -1,0 +1,595 @@
+/* ==========================================================================
+   High-Contrast Monochrome Palette & Layout Reset
+   ========================================================================== */
+:root {
+  --bg-app: #000000;
+  --bg-panel: #111111;
+  --bg-surface: #181818;
+  --bg-surface-hover: #222222;
+
+  --border-light: #333333;
+  --border-active: #ffffff;
+
+  --text-pure: #ffffff;
+  --text-high: #ededed;
+  --text-medium: #c2c2c2;
+  --text-dim: #888888;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* Zero scroll */
+  background-color: var(--bg-app);
+  color: var(--text-high);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Full Viewport Single-Screen App Shell
+   ========================================================================== */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.app-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  letter-spacing: -0.3px;
+}
+
+.brand-role {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+
+.tab-nav {
+  display: flex;
+  gap: 0.4rem;
+  background-color: var(--bg-app);
+  padding: 0.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-medium);
+  padding: 0.45rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.tab-btn:hover {
+  color: var(--text-pure);
+  background-color: var(--bg-surface);
+}
+
+.tab-btn.active {
+  background-color: var(--text-pure);
+  color: var(--bg-app);
+  font-weight: 600;
+  border-color: var(--text-pure);
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-medium);
+  font-family: var(--font-mono);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-pure);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Main Content Split View (No Scroll)
+   ========================================================================== */
+.app-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+  min-height: 0; /* Critical for flex container children sizing */
+}
+
+/* ---------------- Left: Fixed Profile Panel ---------------- */
+.profile-panel {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.profile-image-container {
+  width: 170px;
+  height: 170px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--border-light);
+  background-color: var(--bg-surface);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Normal image display without filters, high sharpness */
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-meta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-pure);
+  letter-spacing: -0.5px;
+}
+
+.profile-tagline {
+  font-size: 0.88rem;
+  color: var(--text-medium);
+  line-height: 1.4;
+}
+
+.profile-details {
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0.9rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: left;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+
+.detail-label {
+  color: var(--text-dim);
+}
+
+.detail-value {
+  color: var(--text-pure);
+  font-weight: 500;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.link-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-pure);
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.link-btn:hover {
+  background-color: var(--text-pure);
+  color: var(--bg-app);
+  border-color: var(--text-pure);
+}
+
+/* ---------------- Right: Interactive Content Panel ---------------- */
+.content-panel {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  position: relative;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-pane {
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.tab-pane.active {
+  display: flex;
+}
+
+.pane-header {
+  flex-shrink: 0;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.75rem;
+}
+
+.pane-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.pane-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+/* Tab 1: About Elements */
+.about-overview p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-high);
+  margin-bottom: 1.25rem;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.focus-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.focus-box h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-pure);
+}
+
+.focus-box p {
+  font-size: 0.82rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+}
+
+/* Tab 2: Skills Elements */
+.skills-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.skill-column {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-col-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-pure);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.5rem;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #242424;
+  border: 1px solid var(--border-light);
+  color: var(--text-pure);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+/* Tab 3: Projects Elements */
+.projects-display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  flex: 1;
+  align-items: stretch;
+}
+
+.compact-project {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.15s ease;
+}
+
+.compact-project:hover {
+  border-color: var(--text-pure);
+}
+
+.compact-proj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+}
+
+.compact-proj-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-pure);
+}
+
+.link-icon {
+  color: var(--text-dim);
+}
+
+.compact-project:hover .link-icon {
+  color: var(--text-pure);
+}
+
+.compact-project p {
+  font-size: 0.84rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.proj-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 0.75rem;
+}
+
+.proj-badges span {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+
+/* Tab 4: Contact Elements */
+.contact-compact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  flex: 1;
+  align-items: center;
+}
+
+.contact-card-info h3 {
+  font-size: 1.25rem;
+  color: var(--text-pure);
+  margin-bottom: 0.5rem;
+}
+
+.contact-card-info p {
+  font-size: 0.88rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.contact-quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.direct-link {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.65rem 0.9rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  transition: all 0.15s ease;
+}
+
+.direct-link:hover {
+  border-color: var(--text-pure);
+}
+
+.direct-link .label {
+  color: var(--text-dim);
+}
+
+.direct-link .val {
+  color: var(--text-pure);
+  font-weight: 500;
+}
+
+.compact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.input-field label {
+  font-size: 0.78rem;
+  color: var(--text-medium);
+  font-weight: 500;
+}
+
+.input-field input,
+.input-field textarea {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-pure);
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  border-radius: var(--radius-sm);
+  outline: none;
+}
+
+.input-field input:focus,
+.input-field textarea:focus {
+  border-color: var(--text-pure);
+}
+
+.submit-btn {
+  background-color: var(--text-pure);
+  color: var(--bg-app);
+  border: 1px solid var(--text-pure);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-top: 0.25rem;
+  transition: background-color 0.15s ease;
+}
+
+.submit-btn:hover {
+  background-color: #dedede;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.app-footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+
+.footer-divider {
+  color: var(--border-light);
+}
+
+/* ==========================================================================
+   Responsive Viewport Fallback
+   ========================================================================== */
+@media (max-width: 950px) {
+  html, body {
+    overflow-y: auto; /* Fallback for smaller screens */
+    height: auto;
+  }
+  .app-layout {
+    height: auto;
+  }
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+  .focus-grid,
+  .skills-columns,
+  .projects-display,
+  .contact-compact-layout {
+    grid-template-columns: 1fr;
+  }
+}

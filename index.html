@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Anand - Student & Cybersecurity Enthusiast">
+  <title>Anand | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-layout">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-name">Anand</span>
+        <span class="brand-role">Computer Science / Cybersecurity</span>
+      </div>
+      <nav class="tab-nav" aria-label="Sections">
+        <button class="tab-btn active" data-tab="about">About</button>
+        <button class="tab-btn" data-tab="skills">Skills</button>
+        <button class="tab-btn" data-tab="projects">Projects</button>
+        <button class="tab-btn" data-tab="contact">Contact</button>
+      </nav>
+      <div class="header-status">
+        <span class="status-indicator"></span> Available for opportunities
+      </div>
+    </header>
+
+    <!-- Main Workspace (Single Screen) -->
+    <main class="app-main">
+      <!-- Left Column: Fixed Profile Panel -->
+      <aside class="profile-panel">
+        <div class="profile-image-container">
+          <img src="pic.webp" alt="Anand" class="profile-photo" id="profileImage">
+        </div>
+        <div class="profile-meta">
+          <h1 class="profile-title">Anand</h1>
+          <p class="profile-tagline">B.Tech Student &amp; Security Researcher</p>
+          <div class="profile-details">
+            <div class="detail-row">
+              <span class="detail-label">Discipline</span>
+              <span class="detail-value">Computer Science &amp; Engg</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Focus</span>
+              <span class="detail-value">Cybersecurity &amp; Systems</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Location</span>
+              <span class="detail-value">India</span>
+            </div>
+          </div>
+          <div class="profile-actions">
+            <a href="https://github.com/AnandK28" target="_blank" rel="noopener noreferrer" class="link-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="mailto:anand@example.com" class="link-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Column: Interactive Content Views -->
+      <section class="content-panel">
+
+        <!-- Tab 1: About -->
+        <article class="tab-pane active" id="pane-about">
+          <div class="pane-header">
+            <span class="pane-tag">01 / Profile</span>
+            <h2 class="pane-title">About Me</h2>
+          </div>
+          <div class="about-overview">
+            <p>
+              I am an engineering student with a dedicated interest in cybersecurity, network defense protocols, and
+              secure software development. I study how systems interact, analyze vulnerability surfaces, and build
+              lightweight defensive utilities.
+            </p>
+          </div>
+          <div class="focus-grid">
+            <div class="focus-box">
+              <h3>Network Analysis &amp; Traffic Inspection</h3>
+              <p>Analyzing raw packets, studying protocol structures (TCP/IP, DNS, HTTP), and identifying anomaly
+                patterns using packet sniffers.</p>
+            </div>
+            <div class="focus-box">
+              <h3>Vulnerability Assessment</h3>
+              <p>Examining application security flaws, studying the OWASP Top 10 vulnerabilities, and implementing
+                secure coding standards.</p>
+            </div>
+            <div class="focus-box">
+              <h3>Systems &amp; Automation Scripting</h3>
+              <p>Writing reliable Python and C tools for network scanning, endpoint checks, and automated task
+                execution.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tab 2: Skills -->
+        <article class="tab-pane" id="pane-skills">
+          <div class="pane-header">
+            <span class="pane-tag">02 / Technical Stack</span>
+            <h2 class="pane-title">Skills &amp; Technologies</h2>
+          </div>
+          <div class="skills-columns">
+            <div class="skill-column">
+              <h3 class="skill-col-title">Cybersecurity</h3>
+              <div class="tag-cloud">
+                <span class="tag">Network Security</span>
+                <span class="tag">OWASP Top 10</span>
+                <span class="tag">Wireshark</span>
+                <span class="tag">Nmap</span>
+                <span class="tag">Linux CLI</span>
+                <span class="tag">Cryptography Basics</span>
+                <span class="tag">Traffic Inspection</span>
+              </div>
+            </div>
+            <div class="skill-column">
+              <h3 class="skill-col-title">Programming</h3>
+              <div class="tag-cloud">
+                <span class="tag">Python</span>
+                <span class="tag">C</span>
+                <span class="tag">C++</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Bash Scripting</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+            <div class="skill-column">
+              <h3 class="skill-col-title">Tools &amp; Web</h3>
+              <div class="tag-cloud">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Git</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">VS Code</span>
+                <span class="tag">Virtual Environments</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tab 3: Projects -->
+        <article class="tab-pane" id="pane-projects">
+          <div class="pane-header">
+            <span class="pane-tag">03 / Projects</span>
+            <h2 class="pane-title">Selected Projects</h2>
+          </div>
+          <div class="projects-display">
+            <div class="compact-project">
+              <div class="compact-proj-header">
+                <h4>Network Packet Analyzer</h4>
+                <a href="https://github.com/AnandK28" target="_blank" rel="noopener noreferrer" class="link-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+              <p>Python-based packet inspection tool parsing headers and logging protocol metrics.</p>
+              <div class="proj-badges">
+                <span>Python</span>
+                <span>Scapy</span>
+                <span>Sockets</span>
+              </div>
+            </div>
+
+            <div class="compact-project">
+              <div class="compact-proj-header">
+                <h4>Vulnerability Scanner CLI</h4>
+                <a href="https://github.com/AnandK28" target="_blank" rel="noopener noreferrer" class="link-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+              <p>Automated command-line scanner checking target endpoints for header vulnerabilities and open flags.</p>
+              <div class="proj-badges">
+                <span>Python</span>
+                <span>Requests</span>
+                <span>CLI</span>
+              </div>
+            </div>
+
+            <div class="compact-project">
+              <div class="compact-proj-header">
+                <h4>Single-Screen Minimal Portfolio</h4>
+                <a href="https://github.com/AnandK28/Portfolio" target="_blank" rel="noopener noreferrer"
+                  class="link-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+              <p>Zero-scroll high-contrast dashboard portfolio coded in pure semantic HTML &amp; CSS.</p>
+              <div class="proj-badges">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tab 4: Contact -->
+        <article class="tab-pane" id="pane-contact">
+          <div class="pane-header">
+            <span class="pane-tag">04 / Connect</span>
+            <h2 class="pane-title">Get In Touch</h2>
+          </div>
+          <div class="contact-compact-layout">
+            <div class="contact-card-info">
+              <h3>Let's talk</h3>
+              <p>Feel free to reach out regarding cybersecurity internships, software engineering roles, or tech
+                discussions.</p>
+              <div class="contact-quick-links">
+                <a href="mailto:anand@example.com" class="direct-link">
+                  <span class="label">Email</span>
+                  <span class="val">anand@example.com</span>
+                </a>
+                <a href="https://github.com/AnandK28" target="_blank" rel="noopener noreferrer" class="direct-link">
+                  <span class="label">GitHub</span>
+                  <span class="val">github.com/AnandK28</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="direct-link">
+                  <span class="label">LinkedIn</span>
+                  <span class="val">linkedin.com/in/anand</span>
+                </a>
+              </div>
+            </div>
+
+            <form class="compact-form" onsubmit="event.preventDefault(); alert('Message noted.');">
+              <div class="input-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="input-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your Email" required>
+              </div>
+              <div class="input-field">
+                <label for="msg">Message</label>
+                <textarea id="msg" rows="3" placeholder="Your message..." required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>HTML5 &amp; CSS3</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
